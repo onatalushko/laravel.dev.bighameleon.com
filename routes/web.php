@@ -29,4 +29,4 @@ Route::get('/sample/{id}/{name}', function ($id, $name) {
 });
 
 Route::get('/review', [MainController::class, 'review']);
-Route::post('/review/check', [MainController::class, 'review_check']);
+Route::post('/review/check', [MainController::class, 'review_check'])->middleware(['CheckEmail']);

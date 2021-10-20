@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Services\DateCheck;
 use Illuminate\Http\Request;
+use App\Facades\DateService;
 
 class MainController extends Controller
 {
@@ -12,6 +14,9 @@ class MainController extends Controller
     }
 
     public function review() {
+        $ext = new DateCheck();
+        dump($ext->isValid('25/01/2021'));
+//        dump(DateService::isValid('25/01/2021'));
         return view('review');
     }
 
